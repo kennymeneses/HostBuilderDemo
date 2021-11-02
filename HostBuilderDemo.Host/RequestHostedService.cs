@@ -53,7 +53,7 @@ namespace HostBuilderDemo.Host
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            _logger.Information("HostBuilderDemo.Host Stop");
+            _logger.Information("HostBuilderDemo.Host has been stopped.");
 
             Log.CloseAndFlush();
 
