@@ -2,7 +2,6 @@
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -70,16 +69,16 @@ namespace HostBuilderDemo.Host
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             int count = 0;
-            int timer = 0;
+            //int timer = 0;
 
-            var task = Task.Run(async () => {
-                for (; ; )
-                {
-                    timer++;
-                    await Task.Delay(1000);
-                    Console.WriteLine(timer.ToString() + " seconds.");
-                }
-            });
+            //var task = Task.Run(async () => {
+            //    for (; ; )
+            //    {
+            //        timer++;
+            //        await Task.Delay(1000);
+            //        Console.WriteLine(timer.ToString() + " seconds.");
+            //    }
+            //});
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -99,27 +98,20 @@ namespace HostBuilderDemo.Host
                         {
                             string id = GetMessageIdFromMessage(message.Body);
 
-                            //if (!list_msg.Contains(id))
-                            //{
-                            //    _logger
-                            //    .ForContext("MessageBody", message.Body, true)
-                            //    .ForContext("Now", DateTimeOffset.Now, true)
-                            //    .Information("New Message arriving: {MessageBody} | {Now}");
-                            //}
+                            if (!list_msg.Contains(id))
+                            {
+                                list_msg.Add(id);
 
-                            count = count + 1;
+                                count++;
 
-                            string mnsj = GetBodyMessageFromSqsMessage(message.Body);
+                                string mnsj = GetBodyMessageFromSqsMessage(message.Body);
 
-                            _logger
-                                .ForContext("MessageBody", mnsj, true)
-                                .ForContext("Now", DateTimeOffset.Now, true)
-                                .Information("New Message arriving: {MessageBody} | {Now}");
+                                _logger
+                                    .ForContext("MessageBody", mnsj, true)
+                                    .ForContext("Now", DateTimeOffset.Now, true)
+                                    .Information("New Message arriving: {MessageBody} | {Now}");
+                            }
                         }
-
-                        _logger
-                            .ForContext("items", count, true)
-                            .Information("the number messages is: {items}");
                     }
                 }
                 catch (Exception e)
