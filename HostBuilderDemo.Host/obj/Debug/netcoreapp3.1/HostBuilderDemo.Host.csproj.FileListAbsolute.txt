@@ -28,7 +28,6 @@ C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBu
 C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
-C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\obj\Debug\netcoreapp3.1\HostBuilderDemo.Host.csprojAssemblyReference.cache
 C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\obj\Debug\netcoreapp3.1\HostBuilderDemo.Host.AssemblyInfoInputs.cache
 C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\obj\Debug\netcoreapp3.1\HostBuilderDemo.Host.AssemblyInfo.cs
 C:\Users\User\onedrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\obj\Debug\netcoreapp3.1\HostBuilderDemo.Host.csproj.CoreCompileInputs.cache
@@ -74,3 +73,8 @@ C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBu
 C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\User\OneDrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
+C:\Users\User\OneDrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\AWSSDK.Extensions.NETCore.Setup.dll
+C:\Users\User\OneDrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\AWSSDK.SimpleNotificationService.dll
+C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\bin\Debug\netcoreapp3.1\AWSSDK.SQS.dll
+C:\Users\User\OneDrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo.Host\obj\Debug\netcoreapp3.1\HostBuilderDemo.Host.csprojAssemblyReference.cache

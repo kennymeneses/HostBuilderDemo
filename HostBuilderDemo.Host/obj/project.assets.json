@@ -2,6 +2,54 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AWSSDK.Core/3.7.3.33": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.7.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "3.7.0.43",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {}
+        }
+      },
+      "AWSSDK.SimpleNotificationService/3.7.2.62": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.31, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.dll": {}
+        }
+      },
+      "AWSSDK.SQS/3.7.1.36": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.3.33, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.SQS.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SQS.dll": {}
+        }
+      },
       "Microsoft.AspNetCore/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1184,6 +1232,98 @@
     }
   },
   "libraries": {
+    "AWSSDK.Core/3.7.3.33": {
+      "sha512": "Y1hrkmaePfqXNyprok0vcoK8EOOLIqMFuztAsIaX5+8EWq4XHW6h1i4fkcZcxAq46s7seI+2jq06/SXp7S0fAw==",
+      "type": "package",
+      "path": "awssdk.core/3.7.3.33",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.3.7.3.33.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "lib/net35/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.pdb",
+        "lib/net35/AWSSDK.Core.xml",
+        "lib/net45/AWSSDK.Core.dll",
+        "lib/net45/AWSSDK.Core.pdb",
+        "lib/net45/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.pdb",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.Extensions.NETCore.Setup/3.7.1": {
+      "sha512": "cm7D75uispA3h/WwMEQVBMmFPPFwRvFQz8fyLwJEB9uqWYfTOMrRTcynMxHnrdoMyQnfCjByRTzHuFgWELmB6Q==",
+      "type": "package",
+      "path": "awssdk.extensions.netcore.setup/3.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.extensions.netcore.setup.3.7.1.nupkg.sha512",
+        "awssdk.extensions.netcore.setup.nuspec",
+        "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll",
+        "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.pdb"
+      ]
+    },
+    "AWSSDK.SimpleNotificationService/3.7.2.62": {
+      "sha512": "UmsUSGO2ykRbOslpK2MOoYmMMZWGs4gXJM0kGK0MP1Tl8u6ujcCFvyb6jgTXiUTJPkNEuFH7GkCmecvR6ha9aA==",
+      "type": "package",
+      "path": "awssdk.simplenotificationservice/3.7.2.62",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SimpleNotificationService.CodeAnalysis.dll",
+        "awssdk.simplenotificationservice.3.7.2.62.nupkg.sha512",
+        "awssdk.simplenotificationservice.nuspec",
+        "lib/net35/AWSSDK.SimpleNotificationService.dll",
+        "lib/net35/AWSSDK.SimpleNotificationService.pdb",
+        "lib/net35/AWSSDK.SimpleNotificationService.xml",
+        "lib/net45/AWSSDK.SimpleNotificationService.dll",
+        "lib/net45/AWSSDK.SimpleNotificationService.pdb",
+        "lib/net45/AWSSDK.SimpleNotificationService.xml",
+        "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.dll",
+        "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SimpleNotificationService.xml",
+        "lib/netstandard2.0/AWSSDK.SimpleNotificationService.dll",
+        "lib/netstandard2.0/AWSSDK.SimpleNotificationService.pdb",
+        "lib/netstandard2.0/AWSSDK.SimpleNotificationService.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.SQS/3.7.1.36": {
+      "sha512": "fIfV4t5VJQCQX6Tx68DrswSYf258yFYio1SJkVD+qWiFNWeIiraMefRbZPj8hZ5/RFSccGQl8/oCy74IZKA5sw==",
+      "type": "package",
+      "path": "awssdk.sqs/3.7.1.36",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SQS.CodeAnalysis.dll",
+        "awssdk.sqs.3.7.1.36.nupkg.sha512",
+        "awssdk.sqs.nuspec",
+        "lib/net35/AWSSDK.SQS.dll",
+        "lib/net35/AWSSDK.SQS.pdb",
+        "lib/net35/AWSSDK.SQS.xml",
+        "lib/net45/AWSSDK.SQS.dll",
+        "lib/net45/AWSSDK.SQS.pdb",
+        "lib/net45/AWSSDK.SQS.xml",
+        "lib/netcoreapp3.1/AWSSDK.SQS.dll",
+        "lib/netcoreapp3.1/AWSSDK.SQS.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SQS.xml",
+        "lib/netstandard2.0/AWSSDK.SQS.dll",
+        "lib/netstandard2.0/AWSSDK.SQS.pdb",
+        "lib/netstandard2.0/AWSSDK.SQS.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "Microsoft.AspNetCore/2.2.0": {
       "sha512": "Bs75iht4lXS8uVWy/Cbsr9i0m2jRtnrfPEWU+6t0dQTZcJEfF9b7G2F7XvstLFWkAKSgYRzFkAwi/KypY0Qtew==",
       "type": "package",
@@ -3476,6 +3616,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AWSSDK.Extensions.NETCore.Setup >= 3.7.1",
+      "AWSSDK.SQS >= 3.7.1.36",
+      "AWSSDK.SimpleNotificationService >= 3.7.2.62",
       "HostBuilderDemo >= 1.0.0",
       "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.Extensions.Hosting >= 2.2.0",
@@ -3488,11 +3631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
       "projectName": "HostBuilderDemo.Host",
-      "projectPath": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
+      "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\obj\\",
+      "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3509,8 +3652,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\User\\onedrive\\desktop\\proyectos\\backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj": {
-              "projectPath": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj"
+            "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj"
             }
           }
         }
@@ -3525,6 +3668,18 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "AWSSDK.Extensions.NETCore.Setup": {
+            "target": "Package",
+            "version": "[3.7.1, )"
+          },
+          "AWSSDK.SQS": {
+            "target": "Package",
+            "version": "[3.7.1.36, )"
+          },
+          "AWSSDK.SimpleNotificationService": {
+            "target": "Package",
+            "version": "[3.7.2.62, )"
+          },
           "Microsoft.AspNetCore": {
             "target": "Package",
             "version": "[2.2.0, )"

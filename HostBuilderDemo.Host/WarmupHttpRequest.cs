@@ -10,6 +10,7 @@ namespace HostBuilderDemo.Host
 
         public WarmupHttpRequest()
         {
+
         }
 
         public async Task StarWarmup()
@@ -18,7 +19,6 @@ namespace HostBuilderDemo.Host
 
             using (var client = new HttpClient())
             {
-                _logger.Information("[WarmupHttpRequest] Start");
 
                 var Answer = await client.GetAsync(url);
                 var AnswerToString = await Answer.Content.ReadAsStringAsync();
@@ -27,6 +27,5 @@ namespace HostBuilderDemo.Host
                 _logger.Debug("Warmup was finished to pokeApi was succesfully");
             }
         }
-
     }
 }
