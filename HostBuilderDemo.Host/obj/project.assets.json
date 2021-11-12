@@ -3631,11 +3631,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
+      "projectUniqueName": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
       "projectName": "HostBuilderDemo.Host",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
+      "projectPath": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\obj\\",
+      "outputPath": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3652,8 +3652,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj": {
-              "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj"
+            "C:\\Users\\User\\onedrive\\desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj": {
+              "projectPath": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo\\HostBuilderDemo.csproj"
             }
           }
         }
@@ -3703,12 +3703,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.21, 3.1.21]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

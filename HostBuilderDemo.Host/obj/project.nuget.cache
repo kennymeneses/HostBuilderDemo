@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lh0oq+mn7xpr7xPiU8swQWNHLK1YZi2fvaZgIwATD3pqxdvWXdhNV5H4AANgMrKClEdeJFFnULvZ9K0+XmOH1Q==",
+  "dgSpecHash": "M79RgiPQUrOelbGehS1orJR3Fs8AbbvLsjln7YtwV8D/4hD0lS8ONBnd0k3R4cDIXC0yFfdqtUeQQIrA6Y0JOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\OneDrive\\Desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
+  "projectFilePath": "C:\\Users\\User\\onedrive\\desktop\\proyectos\\Backends\\Pruebas\\HostBuilderDemo\\HostBuilderDemo.Host\\HostBuilderDemo.Host.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\awssdk.core\\3.7.3.33\\awssdk.core.3.7.3.33.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.7.1\\awssdk.extensions.netcore.setup.3.7.1.nupkg.sha512",
@@ -94,7 +94,8 @@
     "C:\\Users\\User\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512"
   ],
   "logs": []
 }

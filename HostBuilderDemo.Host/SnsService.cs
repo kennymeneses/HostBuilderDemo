@@ -1,5 +1,6 @@
 ﻿using Amazon.SQS;
 using Amazon.SQS.Model;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Serilog;
 using System.Collections.Generic;
@@ -11,7 +12,6 @@ namespace HostBuilderDemo.Host
     {
         private readonly ILogger _logger = Log.Logger.ForContext<RequestHostedService>();
         private IAmazonSQS _SqsClient;
-        //private IConfiguration _configuration;
         public string queueUrl { get; set; }
 
         public SnsService(IAmazonSQS SqsClient)

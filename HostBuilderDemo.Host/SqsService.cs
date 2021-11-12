@@ -1,10 +1,10 @@
 ﻿using Amazon.SQS;
 using Amazon.SQS.Model;
+using HostBuilderDemo.Host.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading;
@@ -17,68 +17,18 @@ namespace HostBuilderDemo.Host
         private readonly ILogger _logger = Log.Logger.ForContext<SqsService>();
         private readonly IConfiguration _configuration;
         private readonly IAmazonSQS _sqs;
-        private readonly List<string> list_msg;
+        private QueueMessage _queueInstance;
 
-        public SqsService(IConfiguration configuration, IAmazonSQS sqs)
+        public SqsService(IConfiguration configuration, IAmazonSQS sqs, QueueMessage queueMessage)
         {
             _configuration = configuration;
             _sqs = sqs;
-            list_msg = new List<string>();
+            _queueInstance = queueMessage;
         }
-
-        //public override async Task StartAsync(CancellationToken stoppingToken)
-        //{
-        //    var messageQueue = await _sqs.ReceiveMessageAsync(
-        //     new ReceiveMessageRequest
-        //     {
-        //         QueueUrl = _configuration["AWS-SQS-QueueURL:DemoQueue"],
-        //         AttributeNames = new List<string> { "All" },
-        //         MaxNumberOfMessages = 10,
-        //     });
-
-        //    Thread.Sleep(2000);
-
-        //    if (messageQueue.Messages.Any())
-        //    {
-        //        string idMessage = string.Empty;
-
-        //        foreach (var message in messageQueue.Messages)
-        //        {
-        //            idMessage = GetMessageIdFromMessage(message.Body);
-
-        //            list_msg.Add(idMessage);
-
-        //            var body = JsonConvert.DeserializeObject(message.Body);
-
-        //            _logger
-        //                .ForContext("body",body.ToString(), true)
-        //                .Information("A message already stored: {body}");
-        //        }
-        //    }
-        //}
-
-        //public override Task StopAsync(CancellationToken cancellationToken)
-        //{
-        //    _logger.Information("AWS SQS Listener ends succesfully");
-
-        //    Log.CloseAndFlush();
-
-        //    return Task.CompletedTask;
-        //}
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             int count = 0;
-            //int timer = 0;
-
-            //var task = Task.Run(async () => {
-            //    for (; ; )
-            //    {
-            //        timer++;
-            //        await Task.Delay(1000);
-            //        Console.WriteLine(timer.ToString() + " seconds.");
-            //    }
-            //});
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -98,9 +48,9 @@ namespace HostBuilderDemo.Host
                         {
                             string id = GetMessageIdFromMessage(message.Body);
 
-                            if (!list_msg.Contains(id))
+                            if (!_queueInstance.listQueue.Contains(id))
                             {
-                                list_msg.Add(id);
+                                _queueInstance.listQueue.Add(id);
 
                                 count++;
 
@@ -140,17 +90,6 @@ namespace HostBuilderDemo.Host
             JsonElement mssg = root.GetProperty("Message");
 
             return mssg.ToString();
-        }
-
-        public void TickTack()
-        {
-            var task = Task.Run(async () => {
-                for (; ; )
-                {
-                    await Task.Delay(1000);
-                    Console.WriteLine("Hello World after 10 seconds");
-                }
-            });
         }
     }
 }

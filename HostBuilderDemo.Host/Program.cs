@@ -3,6 +3,7 @@ using Amazon.SimpleNotificationService;
 using Amazon.SQS;
 using HostBuilderDemo.ExtensionMethods;
 using HostBuilderDemo.Host.ExtensionsMethods;
+using HostBuilderDemo.Host.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -49,8 +50,10 @@ namespace HostBuilderDemo.Host
                         .AddAWSService<IAmazonSimpleNotificationService>()
                         .AddAWSService<IAmazonSQS>()
                         .AddSingleton<WarmupHttpRequest>()
+                        .AddSingleton<QueueMessage>()
+                        //.AddSingleton<SnsService>()
                         .AddSnsService(x => x.GetRequiredService<IAmazonSQS>(), urlSQS)
-                        .AddHostedService<ClassHealthCheks>()
+                        .AddHostedService<ListenerService>()
                         .AddHostedService<SqsService>()
                         //.AddHostedService<RequestHostedService>()
                         .TryAddSingleton(services);

@@ -1,5 +1,6 @@
 ﻿using Amazon.SQS;
 using Amazon.SQS.Model;
+using HostBuilderDemo.Host.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -7,7 +8,7 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -17,54 +18,64 @@ namespace HostBuilderDemo.Host
     {
         private readonly ILogger _logger = Log.Logger.ForContext<ListenerService>();
         private readonly IConfiguration _configuration;
-        private readonly IServiceCollection _services;
-        private readonly IServiceProvider _provider;
         private readonly IAmazonSQS _sqs;
-        private readonly List<string> list_msg;
+        private QueueMessage _queueInstance;
 
-        public ListenerService(IServiceCollection services, IServiceProvider provider, IConfiguration configuration)
+        public ListenerService(IConfiguration configuration,IAmazonSQS sqs, QueueMessage queueMessage)
         {
-            _services = services;
-            _provider = provider;
             _configuration = configuration;
+            _sqs = sqs;
+            _queueInstance = queueMessage;
         }
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            _logger.Information("AWS SnsService Started");
+            _logger.Information("AWS SqsService Started");
 
             try
             {
                 var request = new ReceiveMessageRequest
                 {
                     QueueUrl = _configuration["AWS-SQS-QueueURL:DemoQueue"],
-                    WaitTimeSeconds = 5
+                    WaitTimeSeconds = 5,
+                    MessageAttributeNames = new List<string> { "All" }
                 };
 
-                var result = await _sqs.ReceiveMessageAsync(request);
-
-                if (result.Messages.Any())
+                var request2 = new GetQueueAttributesRequest
                 {
-                    foreach (var message in result.Messages)
+                    QueueUrl = _configuration["AWS-SQS-QueueURL:DemoQueue"],
+                    AttributeNames = new List<string> { "All" }
+                };
+
+                var r = await _sqs.GetQueueAttributesAsync(request2);
+
+                _logger.Information(r.ApproximateNumberOfMessages.ToString()+" Messages founded");
+
+                for (int i = 0; i < r.ApproximateNumberOfMessages; i++)
+                {
+                    var _request = new ReceiveMessageRequest
                     {
-                        string id = GetMessageIdFromMessage(message.Body);
+                        QueueUrl = _configuration["AWS-SQS-QueueURL:DemoQueue"],
+                        WaitTimeSeconds = 5,
+                        MessageAttributeNames = new List<string> { "All" }
+                    };
 
-                        if (!list_msg.Contains(id))
-                        {
-                            list_msg.Add(id);
+                    var resultado = await _sqs.ReceiveMessageAsync(_request);
 
-                            count++;
+                    string id = GetMessageIdFromMessage(resultado.Messages[0].Body);
 
-                            string mnsj = GetBodyMessageFromSqsMessage(message.Body);
+                    _queueInstance.listQueue.Add(id);
 
-                            _logger
-                                .ForContext("MessageBody", mnsj, true)
-                                .ForContext("Now", DateTimeOffset.Now, true)
-                                .Information("New Message arriving: {MessageBody} | {Now}");
-                        }
-                    }
+                    string mnsj = GetBodyMessageFromSqsMessage(resultado.Messages[0].Body);
+
+                    _logger
+                        .ForContext("MessageBody", mnsj, true)
+                        .ForContext("Now", DateTimeOffset.Now, true)
+                        .Information("A Message has been stored: {MessageBody} | {Now}");
+
                 }
 
+                _logger.Information("Number messages stored: " + r.ApproximateNumberOfMessages.ToString() +" stored");
             }
             catch (Exception ex)
             {
@@ -90,6 +101,24 @@ namespace HostBuilderDemo.Host
                 .Select(descripcion => descripcion.ServiceType)
                 .Distinct()
                 .ToList();
+        }
+
+        public string GetMessageIdFromMessage(string body)
+        {
+            JsonDocument json = JsonDocument.Parse(body);
+            JsonElement root = json.RootElement;
+            JsonElement mssgId = root.GetProperty("MessageId");
+
+            return mssgId.ToString();
+        }
+
+        public string GetBodyMessageFromSqsMessage(string body)
+        {
+            JsonDocument json = JsonDocument.Parse(body);
+            JsonElement root = json.RootElement;
+            JsonElement mssg = root.GetProperty("Message");
+
+            return mssg.ToString();
         }
     }
 }

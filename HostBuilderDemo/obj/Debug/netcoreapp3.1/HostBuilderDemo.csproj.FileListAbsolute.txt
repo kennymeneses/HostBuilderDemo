@@ -6,3 +6,5 @@ C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBu
 C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBuilderDemo\bin\Debug\netcoreapp3.1\HostBuilderDemo.pdb
 C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBuilderDemo\obj\Debug\netcoreapp3.1\HostBuilderDemo.dll
 C:\Users\User\onedrive\desktop\proyectos\backends\Pruebas\HostBuilderDemo\HostBuilderDemo\obj\Debug\netcoreapp3.1\HostBuilderDemo.pdb
+C:\Users\User\OneDrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo\obj\Debug\netcoreapp3.1\HostBuilderDemo.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Desktop\proyectos\Backends\Pruebas\HostBuilderDemo\HostBuilderDemo\obj\Debug\netcoreapp3.1\HostBuilderDemo.GeneratedMSBuildEditorConfig.editorconfig
